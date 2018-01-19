@@ -20,6 +20,10 @@ with open("pictureList.txt","a")as f:
 
     while (cap.isOpened()):
         frame_count += 1
+        #print(frame_count)
+        if(frame_count>1000):
+            frame_count=0
+
         ret, frame = cap.read()
 
         if ret==True:
@@ -40,6 +44,7 @@ with open("pictureList.txt","a")as f:
 
                     #顔写真キャプチャ
                     # cv2.imwrite(picture, frame)
+                    print("take a picture")
 
                     f.write(str(now)+"  :  "+ picture)
                     f.write("\n")
